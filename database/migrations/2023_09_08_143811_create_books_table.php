@@ -10,6 +10,7 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('category_id')->unsigned(); // This is a foreign key.
             $table->string('title');
             $table->string('author');
             $table->text('description')->nullable();
