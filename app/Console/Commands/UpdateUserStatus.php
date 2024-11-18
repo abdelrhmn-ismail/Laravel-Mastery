@@ -18,17 +18,17 @@ class UpdateUserStatus extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Update the status of inactive users';
 
     /**
      * Execute the console command.
      */
     public function handle()
     {
-        $users = User::get();
-        foreach ($users as $user) {
-            $user->status = 1;
-            $user->save();
-        }
+        // $users = User::get();
+        // foreach ($users as $user) {
+        //     $user->status = 1;
+        //     $user->save();
+        // }
     }
 }
