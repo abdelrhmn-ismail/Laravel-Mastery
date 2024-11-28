@@ -2,17 +2,25 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
+
+// Route for the main domain
+Route::domain('tenancy.test')->group(function () {
+    Route::get('/', function () {
+        return 'Welcome to the main domain!';
+    });
+});
+
+// Route for app01 subdomain
+Route::domain('app01.tenancy.test')->group(function () {
+    Route::get('/', function () {
+        return 'Welcome to App01!';
+    });
+});
+
+// Route for app02 subdomain
+Route::domain('app02.tenancy.test')->group(function () {
+    Route::get('/', function () {
+        return 'Welcome to App02!';
+    });
 });
